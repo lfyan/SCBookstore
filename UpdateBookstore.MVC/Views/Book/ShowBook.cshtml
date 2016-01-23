@@ -1,0 +1,49 @@
+﻿@model List<UpdateBookstore.MVC.Models.GetBooksofPage_Result>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BookList</title>
+</head>
+<body>
+    <h1>@ViewBag.Categoryname Book List</h1>
+    <div>
+        @for (int i = 1; i <= ViewBag.MaxPageNumber; i++)
+        {
+            
+            @Html.ActionLink("Page " + i.ToString() + " ", "Show", new { pageNumber = i, categoryname = ViewBag.Categoryname})
+        }
+
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Cover</th>
+                <th>Author</th>
+                <th>Year</th>
+                @*<th>Rate</th>
+                    <th>Edit</th>
+                    <th>Delete</th>*@
+                <th>Add to Cart</th>
+            </tr>
+            @foreach (var book in this.Model)
+            {
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.Name</td>
+                    <td>@book.Price</td>
+                    <td><img src="@Url.Content(book.CoverImagePath)" alt="@book.Name" /></td>
+                    <td>@book.Author</td>
+                    <td>@book.Year</td>
+                    @*<td>@book.Rate</td>
+                        <td>@Html.ActionLink("Edit", "Edit", new { id = book.Id})</td>
+                        <td>@Html.ActionLink("Delete", "Delete", new { id =book.Id})</td>*@
+                    <td>@Html.ActionLink("Add to Cart", "AddToCart", new { id = book.Id })</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
+

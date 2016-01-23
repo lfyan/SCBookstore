@@ -1,0 +1,42 @@
+﻿@model UpdateBookstore.MVC.Models.User
+
+@{ float totalCost = 0.0F;}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cart</title>
+</head>
+<body>
+    <div>
+        <h2>Shopping cart for user #@Model.Id</h2>
+        <h2>User Name: @Model.FirstName</h2>
+        <table border="1">
+            <tr>
+                <th>Book Name</th>
+                <th>Book Price</th>
+                <th>Book Copies</th>
+                <th>Cost</th>
+                <th>Delete</th>
+            </tr>
+            @foreach (var order in Model.Orders)
+            {
+                float value = float.Parse((order.BookPrice * order.BookAmount).ToString());
+                totalCost = totalCost + value;
+                <tr>
+                    <td>@order.BookName</td>
+                    <td>@order.BookPrice</td>
+                    <td>@order.BookAmount</td>
+                    <td>@value</td>
+                    <td>@Html.ActionLink("Delete", "EditCart", "User", new { id = order.Id, userId = order.UserId }, null)</td>
+                </tr>
+            }
+        </table>
+        <h3>Total cost is: @totalCost</h3>
+        @Html.ActionLink("Continue shopping", "Index", "Home")
+    </div>
+</body>
+</html>
+

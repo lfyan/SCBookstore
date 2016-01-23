@@ -1,0 +1,27 @@
+﻿@model UpdateBookstore.MVC.Models.Book
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cart</title>
+</head>
+<body>
+    <div>
+        <h2>Add this book to the shopping cart</h2>
+        @using (Html.BeginForm("AddToCart", "Book"))
+        {
+            @Html.Hidden("BookName", Model.Name)
+            @Html.Hidden("BookPrice", Model.Price)
+            @Html.Hidden("BookId", Model.Id)
+            <div>Book Name: @Model.Name</div>
+            <div>Book Price: @Model.Price</div>
+            <div>Please input the amount:</div>@Html.TextBox("BookAmount")
+            <div>Please input your User Id:</div>@Html.TextBox("UserId")<br />
+            <input type="submit" value="Add to cart" />
+        }
+    </div>
+</body>
+</html>
+

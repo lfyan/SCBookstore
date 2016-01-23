@@ -1,0 +1,29 @@
+﻿@model UpdateBookstore.MVC.Models.User
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserInfoVerify</title>
+</head>
+<body>
+    <div>
+        <h4>
+            Please check your information below. If there is anything wrong,
+            pleaes enter the correct information, and click "Revise"
+        </h4>
+        @using (Html.BeginForm("UserRevise", "User"))
+        {
+            @Html.HiddenFor(m => m.Id)
+            @Html.LabelFor(m => m.FirstName)@Html.TextBoxFor(m => m.FirstName)<br />
+            @Html.LabelFor(m => m.LastName)@Html.TextBoxFor(m => m.LastName)<br />
+            @Html.LabelFor(m => m.DateofBirth)@Html.TextBoxFor(m => m.DateofBirth)<br />
+            @Html.LabelFor(m => m.Phone)@Html.TextBoxFor(m => m.Phone)<br />
+            @Html.LabelFor(m => m.Email)@Html.TextBoxFor(m => m.Email)<br />
+            <input type="submit" value="revise" />
+        }
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserRevise</title>
+</head>
+<body>
+    <div>
+        <h2>User verification</h2>
+        @using (Html.BeginForm("UserInfoRevise", "User"))
+        {
+            <div>Please input your User Id:</div>@Html.TextBox("Id")<br />
+            <input type="submit" value="Submit" />
+        }
+    </div>
+</body>
+</html>
+

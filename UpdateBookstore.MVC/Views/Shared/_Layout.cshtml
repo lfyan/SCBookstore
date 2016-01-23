@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+        #header {
+            background-color: #F5DA81;
+            color: white;
+            text-align: center;
+            width: 1130px;
+            height: 100px;
+            padding-top: 20px;
+        }
+
+        #nav {
+            background-color: #eeeeee;
+            width: 1130px;
+            height: 30px;
+            color: black;
+            padding-top: 20px;
+            text-align: center;
+            font-size: x-large;
+        }
+
+            #nav span a:hover {
+                background-color: gold;
+            }
+
+        #content {
+            width: 1130px;
+            height: 600px;
+            position: relative;
+        }
+
+        #leftsection {
+            position: absolute;
+            left: 0px;
+            width: 170px;
+            height: 570px;
+            float: left;
+            padding-left: 20px;
+            padding-top: 30px;
+            background-color: #AEB404;
+        }
+
+        #rightsection {
+            position: absolute;
+            right: 0px;
+            line-height: 30px;
+            height: 580px;
+            width: 875px;
+            padding-left: 65px;
+            padding-top: 20px;
+        }
+
+        #footer {
+            background-color: #eeeeee;
+            width: 1130px;
+            color: black;
+            clear: both;
+            text-align: center;
+            padding-top: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Welcome to Dragon Bookstore!</h1>
+    </div>
+
+    <div id="nav">
+        <span>@Html.ActionLink("Home page", "Index", "Home")</span>
+        <span>@Html.ActionLink("User Registration", "UserRegister", "User")</span>
+        <span>@Html.ActionLink("Update User Info", "UserInfoUpdate", "User")</span>
+        <span>@Html.ActionLink("View your cart", "ViewCart", "User")</span>
+    </div>
+
+    <div id="content">
+        <div id="leftsection">
+            <p>(For anonymous user, please try User Id=1 to explore around.)</p><br /><br /><br />
+            @using (Html.BeginForm("SearchBook", "Search"))
+            {
+                @Html.TextBox("searchString")
+                <input type="submit" value="Search" />
+            }
+            <br /><br /><br /><br /><br />
+            @Html.ActionLink("Acknowledgment", "Acknowledgment", "Home")<br /><br />
+            @Html.ActionLink("About Us", "AboutUs", "Home")<br /><br />
+            @Html.ActionLink("Contact Us", "ContactUs", "Home")<br /><br />
+        </div>
+
+        <div id="rightsection">
+            @RenderBody()
+        </div>
+    </div>
+
+    <div id="footer">
+        <h6>Copyright 2015 by Dragon Bookstore</h6>
+    </div>
+</body>
+</html>
+

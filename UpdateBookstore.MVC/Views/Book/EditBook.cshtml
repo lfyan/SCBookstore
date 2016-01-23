@@ -1,0 +1,28 @@
+﻿@model UpdateBookstore.MVC.Models.Book
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <div>
+        <h3>Edit Book #@Model.Id</h3>
+        @using (Html.BeginForm("Edit", "Book", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.HiddenFor(m => m.Id)
+            @Html.HiddenFor(m => m.CoverImagePath)
+            @Html.HiddenFor(m=>m.Category)
+            @Html.LabelFor(m => m.Name)@Html.TextBoxFor(m => m.Name)<br />
+            @Html.LabelFor(m => m.Price)@Html.TextBoxFor(m => m.Price)<br />
+            @Html.LabelFor(m => m.Year)@Html.TextBoxFor(m => m.Year)<<<br />
+                @Html.LabelFor(m => m.Author)@Html.TextBoxFor(m => m.Author)<br />
+                <label>Cover</label><input type="file" name="cover" />
+                <input type="submit" value="update" />
+        }
+    </div>
+</body>
+</html>
+

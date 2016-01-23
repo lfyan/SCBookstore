@@ -1,0 +1,28 @@
+﻿@model UpdateBookstore.MVC.Models.User
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserRegister</title>
+</head>
+<body>
+    <div>
+        <h2>Welcome, new user!</h2>
+        <h2>Please enter your registration information below</h2>
+        @using (Html.BeginForm("UserRegister", "User"))
+        {
+            @Html.LabelFor(m => m.FirstName)@Html.TextBoxFor(m => m.FirstName)<span>*</span><br />
+            @Html.LabelFor(m => m.LastName)@Html.TextBoxFor(m => m.LastName)<span>*</span><br />
+            @Html.LabelFor(m => m.DateofBirth)@Html.TextBoxFor(m => m.DateofBirth)<span>*</span><br />
+            <span>(e.g. If your birth is November 15, 1998, please input 11151998.)</span><br />
+            @Html.LabelFor(m => m.Phone)@Html.TextBoxFor(m => m.Phone)<span>(optional)</span><br />
+                @Html.LabelFor(m => m.Email)@Html.TextBoxFor(m => m.Email)<span>(optional)</span><br />
+                <input type="submit" value="submit" />
+        }
+        <h6>* means information required.</h6>
+    </div>
+</body>
+</html>
+
