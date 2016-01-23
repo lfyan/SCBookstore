@@ -99,7 +99,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\book1.jpg" />
+    <Content Include="Images\book2.jpg" />
+    <Content Include="Images\book3.jpg" />
     <Content Include="Images\CSBookCovers\CSCover1.jpg" />
     <Content Include="Images\CSBookCovers\CSCover10.jpg" />
     <Content Include="Images\CSBookCovers\CSCover11.jpg" />
@@ -150,7 +159,6 @@
     <Content Include="Images\CSBookCovers\CSCover7.jpg" />
     <Content Include="Images\CSBookCovers\CSCover8.jpg" />
     <Content Include="Images\CSBookCovers\CSCover9.jpg" />
-    <Content Include="Images\dragon.JPG" />
     <Content Include="Images\EconomicsCovers\Economics1.png" />
     <Content Include="Images\EconomicsCovers\Economics10.png" />
     <Content Include="Images\EconomicsCovers\Economics11.png" />
@@ -258,6 +266,19 @@
       <DependentUpon>BookstoreModel.edmx</DependentUpon>
       <LastGenOutput>BookstoreModel.cs</LastGenOutput>
     </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-2.2.0.intellisense.js" />
+    <Content Include="Scripts\jquery-2.2.0.js" />
+    <Content Include="Scripts\jquery-2.2.0.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -309,8 +330,6 @@
       <DependentUpon>BookstoreModel.edmx</DependentUpon>
     </Content>
     <Content Include="Views\Home\AboutUs.cshtml" />
-    <Content Include="Views\Home\Acknowledgment.cshtml" />
-    <Content Include="Views\Home\ContactUs.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Cart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
@@ -325,6 +344,7 @@
     <Content Include="Views\User\UserVerification.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\User\Warning.cshtml" />
+    <Content Include="Scripts\jquery-2.2.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
